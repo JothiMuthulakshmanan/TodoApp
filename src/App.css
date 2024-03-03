@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.li{
+  text-decoration: none;
+  
+}
+.li:hover {
+  text-decoration-line: line-through;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,6 +21,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -36,3 +47,4 @@
     transform: rotate(360deg);
   }
 }
+
