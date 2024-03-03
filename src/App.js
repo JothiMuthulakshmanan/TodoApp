@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import style from './App.css';
+
 import { useState } from 'react';
-import { hover } from '@testing-library/user-event/dist/hover';
 
 function App() {
 
@@ -13,7 +11,7 @@ function App() {
 
   const handleAdd =()=>{
     const newId = Math.random().toString(36).slice(2, 7);
-    {inputvalue !=''&&
+    {inputvalue !==''&&
     SetItemlist([...itemlist,{ id: newId, text: inputvalue }]);
     setInputvalue('');
     setClear(false);}
@@ -32,7 +30,7 @@ function App() {
     <div className="App">
       <div className={'container mx-20'}>
               
-              <p className={'text-dark display-1 mb-4'}>Todo App</p>
+              <p className={'text-dark display-1 mb-4 d-flex justify-content-center'}>Todo App</p>
 
       <div className={'row d-flex justify-content-center'}>
         <div className='col-8 col-lg-3 '>
@@ -45,7 +43,7 @@ function App() {
 
        <ul className='list-group mt-2'>
         
-        { selectstate =='All' &&(
+        { selectstate ==='All' &&(
           itemlist.map((item)=>(
             
             <div className='row d-flex justify-content-center' key={item.id}>
@@ -65,13 +63,13 @@ function App() {
           ))
         }
 
-        { selectstate =='completed' &&(
+        { selectstate ==='completed' &&(
           itemlist.map((item)=>(
             
             <div className='row d-flex justify-content-center' key={item.id}>
               <div className='col-lg-4 col-12'>
 
-               {clicklist[item.id] == true &&(
+               {clicklist[item.id] === true &&(
                 <li className='list-group-item list-group-item-action my-1 rounded-2 text-start ' >{item.text} </li>)}
 
               </div>
@@ -82,27 +80,28 @@ function App() {
         }
 
 
-        { selectstate =='active' &&(
+        { selectstate ==='active' &&(
           itemlist.map((item)=>(
             
             <div className='row d-flex justify-content-center' key={item.id}>
               <div className='col-lg-4 col-12'>
 
-               {clicklist[item.id] != true &&(
-                <li className='list-group-item list-group-item-action my-1 rounded-2 text-start ' >{item.text}</li>)}
+                 clicklist[item.id] !== true &&(
+                <li className='list-group-item list-group-item-action my-1 rounded-2 text-start ' >{item.text}</li>)
 
               </div>
             </div>         
              )
 
           ))
-        }
+                 }    
 
-        { clear == true && (
+
+         {clear === true && (
           <div>All Item is Removed</div>
-        )
+        )}
 
-        }
+        
 
         
 
