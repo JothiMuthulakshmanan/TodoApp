@@ -86,8 +86,8 @@ function App() {
             <div className='row d-flex justify-content-center' key={item.id}>
               <div className='col-lg-4 col-12'>
 
-                 clicklist[item.id] !== true &&(
-                <li className='list-group-item list-group-item-action my-1 rounded-2 text-start ' >{item.text}</li>)
+            { clicklist[item.id] !== true &&(
+                <li className='list-group-item list-group-item-action my-1 rounded-2 text-start ' >{item.text}</li>)}
 
               </div>
             </div>         
